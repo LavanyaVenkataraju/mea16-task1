@@ -25,7 +25,7 @@ pipeline {
         stage('Push') {
             steps {
                 sh '''
-                docker push lavyyndocker/flask-jenk .
+                docker push lavyyndocker/flask-jenk 
                 docker push lavyyndocker/nginx-jenk
                 '''
             }

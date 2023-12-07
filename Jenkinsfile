@@ -17,8 +17,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                docker build -t lavyyndocker/flask-jenk:latest -t lavyyndocker/flask-jenk:v$(BUILD_NUMBER} .
-                docker build -t lavyyndocker/nginx-jenk:latest -t lavyyndocker/nginx-jenk:v$(BUILD_NUMBER) ./nginx
+                docker build -t lavyyndocker/flask-jenk:latest -t lavyyndocker/flask-jenk:v${BUILD_NUMBER} .
+                docker build -t lavyyndocker/nginx-jenk:latest -t lavyyndocker/nginx-jenk:v${BUILD_NUMBER} ./nginx
                 '''
             }
         }
@@ -26,9 +26,9 @@ pipeline {
             steps {
                 sh '''
                 docker push lavyyndocker/flask-jenk:latest
-                docker push lavyyndocker/flask-jenk:v$(BUILD_NUMBER)
+                docker push lavyyndocker/flask-jenk:v${BUILD_NUMBER}
                 docker push lavyyndocker/nginx-jenk:latest
-                docker push lavyyndocker/nginx-jenk:v$(BUILD_NUMBER)
+                docker push lavyyndocker/nginx-jenk:v${BUILD_NUMBER}
                 '''
             }
         }

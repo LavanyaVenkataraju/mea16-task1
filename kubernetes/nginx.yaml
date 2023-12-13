@@ -24,11 +24,11 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx       # must be the same value as the label in the template
+      app: nginx       
  template:
     metadata:
       labels:
-        app: nginx      # this label is assigned to each pod in the set
+        app: nginx      
     spec:
       containers:
       - name: nginx

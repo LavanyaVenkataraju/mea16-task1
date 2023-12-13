@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:alpine
+        image: nginx:latest
   volumes:
   - name: nginx-volume
     configMap:

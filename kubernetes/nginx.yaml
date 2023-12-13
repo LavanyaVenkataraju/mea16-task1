@@ -24,7 +24,15 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx 
+      app: nginx       # must be the same value as the label in the template
+ template:
+    metadata:
+      labels:
+        app: nginx      # this label is assigned to each pod in the set
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:alpine
   volumes:
   - name: nginx-volume
     configMap:

@@ -21,14 +21,9 @@ metadata:
   labels:
     app: nginx
 spec:
-  replicas: 10
   selector:
     matchLabels:
       app: nginx       
-  strategy:
-    rollingUpdate:
-      maxSurge: 10%
-      maxUnavailable: 25%  
   template:
     metadata:
       labels:

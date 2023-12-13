@@ -12,19 +12,7 @@ data:
           proxy_pass http://flask-app:5500;
         }
       }
-    }
----
-apiVersion: apps/v1
-kind: ReplicaSet
-metadata:
-  name: nginx
-  labels:
-    app: nginx
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: nginx     
+    } 
 ---
 apiVersion: v1
 kind: Pod
@@ -58,3 +46,18 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 80
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx 
+containers:
+  - name: nginx
+    image: nginx:latest

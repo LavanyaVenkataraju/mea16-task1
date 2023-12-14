@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: task1
-        image: lavyyndocker/task1kube:latest
+        image: lavyyndocker/task1-kube:latest
         imagePullPolicy: Always
         ports: 
         - containerPort: 5500
